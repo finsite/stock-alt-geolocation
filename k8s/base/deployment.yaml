@@ -16,7 +16,7 @@ spec:
         app: stock-alt-geolocation
     spec:
       containers:
-      - name: stock-alt-geolocation
-        image: stock-alt-geolocation:latest
-        ports:
-        - containerPort: 8080
+        - name: stock-alt-geolocation
+          image: stock-alt-geolocation:latest
+          ports:
+            - containerPort: 8080
