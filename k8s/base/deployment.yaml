@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stock-alt-geolocation
+  labels:
+    app: stock-alt-geolocation
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stock-alt-geolocation
+  template:
+    metadata:
+      labels:
+        app: stock-alt-geolocation
+    spec:
+      containers:
+      - name: stock-alt-geolocation
+        image: stock-alt-geolocation:latest
+        ports:
+        - containerPort: 8080
