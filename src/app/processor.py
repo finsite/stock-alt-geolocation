@@ -3,6 +3,7 @@
 """Processor module for enriching data with geolocation information."""
 
 from typing import Any
+
 from app.utils.setup_logger import setup_logger
 from app.utils.types import validate_dict
 
