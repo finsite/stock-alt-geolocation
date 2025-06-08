@@ -4,7 +4,7 @@
 
 from typing import Any
 from app.utils.setup_logger import setup_logger
-from app.utils.validate_data import validate_dict
+from app.utils.types import validate_dict
 
 logger = setup_logger(__name__)
 
