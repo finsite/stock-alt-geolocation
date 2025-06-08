@@ -7,6 +7,8 @@ Vault, environment variables, or defaults — in that order.
 import os
 
 from app.utils.vault_client import VaultClient
+from app.utils.types import OutputMode
+from typing import cast
 
 # Initialize and cache Vault client
 _vault = VaultClient()
@@ -69,10 +71,9 @@ def get_rate_limit() -> int:
     return int(get_config_value("RATE_LIMIT", "0"))
 
 
-def get_output_mode() -> str:
-    """Output mode: 'queue' to publish, 'log' for debug output."""
-    return get_config_value("OUTPUT_MODE", "queue")
-
+def get_output_mode() -> OutputMode:
+    """Output mode: 'queue', 'log', 'stdout', 'rest', 's3', or 'database'."""
+    return cast(OutputMode, get_config_value("OUTPUT_MODE", "queue"))
 
 # ------------------------------------------------------------------------------
 # 📬 Queue Type
@@ -150,17 +151,3 @@ def get_sqs_queue_url() -> str:
 def get_sqs_region() -> str:
     """AWS region of the SQS queue."""
     return get_config_value("SQS_REGION", "us-east-1")
-
-
-# ------------------------------------------------------------------------------
-# 🌐 Geolocation Service Configuration (Repo-Specific)
-# ------------------------------------------------------------------------------
-
-def get_geolocation_provider() -> str:
-    """Geolocation provider: 'mock', 'ipstack', 'ipinfo', 'geoip2', etc."""
-    return get_config_value("GEOLOCATION_PROVIDER", "mock")
-
-
-def get_geolocation_api_key() -> str:
-    """API key or token for the geolocation service."""
-    return get_config_value("GEOLOCATION_API_KEY", "")
