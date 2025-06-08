@@ -18,6 +18,7 @@ def enrich_with_geolocation(record: dict[str, Any]) -> dict[str, Any]:
 
     Returns:
         dict: The enriched message with a `geolocation` field added.
+
     """
     # Validate input schema (e.g. ensure 'ip_address' key exists)
     validate_dict(record, required_keys=["ip_address"])
