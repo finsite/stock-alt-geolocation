@@ -1,3 +1,9 @@
+## v0.2.0 (2025-06-09)
+
+### Feat
+
+- finalize stock-alt-geolocation with real geolocation enrichment and production config
+
 ## v0.1.2 (2025-06-08)
 
 ### Fix
