@@ -2,7 +2,8 @@
 
 ### Feat
 
-- finalize stock-alt-geolocation with real geolocation enrichment and production config
+- finalize stock-alt-geolocation with real geolocation enrichment and production
+  config
 
 ## v0.1.2 (2025-06-08)
 
