@@ -17,9 +17,11 @@ def get_dlq_name() -> str:
     """Return the Dead Letter Queue (DLQ) name for this poller."""
     return get_config_value("DLQ_NAME", "stock_alt_geolocation_dlq")
 
+
 def get_geolocation_provider() -> str:
     """Return the geolocation data provider name."""
     return get_config_value("GEOLOCATION_PROVIDER", "ipinfo")
+
 
 def get_geolocation_api_key() -> str:
     """Return the API key for the geolocation provider."""
